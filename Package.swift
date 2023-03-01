@@ -5,9 +5,9 @@ import PackageDescription
 let package = Package(
     name: "Down",
     platforms: [
-        .macOS("10.11"),
-        .iOS("9.0"),
-        .tvOS("9.0")
+        .macOS("11.0"),
+        .iOS("12.0"),
+        .tvOS("12.0")
     ],
     products: [
         .library(
@@ -15,16 +15,15 @@ let package = Package(
             targets: ["Down"]
         )
     ],
-		dependencies: [
-			.package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .upToNextMajor(from: "1.8.2")),
-			.package(url: "https://github.com/apple/swift-cmark.git", .branch("gfm"))
-		],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .upToNextMajor(from: "1.8.2")),
+        .package(url: "https://github.com/apple/swift-cmark.git", .branch("gfm"))
+    ],
     targets: [
         .target(
             name: "Down",
             dependencies: [
-								.product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
-							  .product(name: "cmark-gfm", package: "swift-cmark")
+                .product(name: "cmark-gfm", package: "swift-cmark")
             ],
             path: "Sources/Down",
             exclude: ["Down.h"],
@@ -35,7 +34,10 @@ let package = Package(
         ),
         .testTarget(
             name: "DownTests",
-            dependencies: ["Down"],
+            dependencies: [
+                "Down",
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+            ],
             path: "Tests/DownTests",
             exclude: [
                 "AST/VisitorTests.swift",
