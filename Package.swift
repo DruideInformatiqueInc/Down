@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .upToNextMajor(from: "1.8.2")),
-        .package(url: "https://github.com/apple/swift-cmark.git", .branch("gfm"))
+        .package(url: "https://github.com/swiftlang/swift-cmark.git", .branch("gfm"))
     ],
     targets: [
         .target(

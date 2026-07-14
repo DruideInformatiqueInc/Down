@@ -1138,7 +1138,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		DA7D189829AFD9D8008B0291 /* XCRemoteSwiftPackageReference "swift-cmark" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-cmark.git";
+			repositoryURL = "https://github.com/swiftlang/swift-cmark.git";
 			requirement = {
 				branch = gfm;
 				kind = branch;
